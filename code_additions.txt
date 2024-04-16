@@ -1,0 +1,78 @@
+## Importing the relevant libraries: TensorFlow, Keras, Numpy, Pandasimport tensorflow as tf
+# We can add all the libraries we used throughout the script to the top (task 1.1)
+
+import tensorflow as tf
+from tensorflow import keras
+from keras import datasets, layers, models
+from keras.optimizers import SGD
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+%matplotlib inline
+
+from keras.preprocessing.image import ImageDataGenerator
+from tensorflow.keras.callbacks import TensorBoard
+import datetime
+
+import keras
+from hyperopt import hp,fmin, tpe, Trials, STATUS_OK, STATUS_FAIL
+from sklearn.metrics import mean_squared_error
+import mlflow
+import mlflow.keras
+
+from keras.layers import RandomFlip, RandomRotation, Rescaling, BatchNormalization, Conv2D, MaxPooling2D, Dense, Input, Flatten, Dropout
+from keras.models import Model, Sequential
+
+import mlflow.tensorflow
+
+from fastapi import FastAPI
+import mlflow.pyfunc
+
+#Preprocessing ###################
+
+# We could put these preprocessing steps all in the same section for readability
+
+X_train_scaled = X_train / 255
+X_test_scaled = X_test / 255
+
+X_train_scaled = X_train_scaled.reshape(60000,28,28,1)
+
+# We should also make our Y categorical with:
+y_train_categorical = to_categorical(y_train, num_classes = 10)
+y_test_categorical = to_categorical(y_test, num_classes = 10)
+
+#Saving files compressed  #######################
+
+np.savez_compressed('CNN_DATA',
+                    x_train = X_train_scaled,
+                    x_test = X_test_scaled,
+                    y_train = y_train,
+                    y_test = y_test)
+
+#Setting up FastAPI  ###############################
+
+# "app" is just a placeholder name we can call it whatever we want 
+
+#create web app  that will allow us to do predictions with a pre trained machine learning model 
+# that we saved within MLFlow
+
+app = FastAPI()
+
+# Define prediction endpoint
+@app.post('/predict')
+def predict(data: dict):
+    model = mlflow.pyfunc.load_model("")  #Insert path to our model
+    prediction = model.predict(data)
+    return("prediction": prediction)
+
+#Additional notes
+
+verbose = 0 inside the .fit function allows us to run hyperopt without so much text printing 
+(to make it more readable)
+
+example:
+model.fit(x = X_train_scaled,
+                  y = y_train,
+                  epochs = 10,
+                  validation_data = (X_validation_scaled, y_validation_categorical),
+                  verbose = 0)
