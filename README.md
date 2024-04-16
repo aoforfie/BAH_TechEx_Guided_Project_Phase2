@@ -2,7 +2,7 @@
 This is a deliverable for the Guided Project Phase 2 during the BAH Technology Excellence Program
 
 **Overview**
-This repository contains the implementation of a Convolutional Neural Network (CNN) architecture for image classification. This README provides the results of running a baseline model, an improved model and a best model post adjustment using the parameters from a Hyper Parameterization exercise.
+This repository contains the implementation of a Convolutional Neural Network (CNN) architecture for Image Classification. This README provides the results of running a baseline model, an improved model and a best model post adjustment using the parameters from a Hyper Parameterization exercise.
 
 **Architecture**
 A Sequential model with regular densely-connected Neural Network (NN) layers was built. The input layer was assigned as layers.Input(shape=(28,28,1)). 
@@ -20,9 +20,12 @@ The following are the list of Hidden Layers that were used:
   Finally, the model's output layer was given as: layers.Dense(num_classes, name="OUTL", activation='softmax') where num_classes was earlier determined as 10.
   
 **Dataset**
-[If applicable, describe the dataset used for training and evaluation. Include details such as the size of the dataset, number of classes, preprocessing steps, etc.]
+The MNIST (Modified National Institute of Standards and Technology database) dataset contains a training set of 60,000 images and a test set of 10,000 images of handwritten digits. The handwritten digit images have been size-normalized and centered in a fixed size of 28×28 pixels.
 
-Training
+**Pre-Processing Steps**
+The MNIST dataset was split into four datasets of Training (X_train,y_train), Validation and Testing (X_test and y_test) after which they were normalized (dividing by 255), reshaped and augmented with ImageDataGenerator. The Pre-Processed data was saved as CNN_DATA.npz file.
+
+**Training**
 [Describe the training process here. Include details such as the optimizer used, learning rate, batch size, number of epochs, any data augmentation techniques applied, etc.]
 
 Evaluation
