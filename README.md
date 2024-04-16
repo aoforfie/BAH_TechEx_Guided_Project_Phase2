@@ -4,10 +4,22 @@ This is a deliverable for the Guided Project Phase 2 during the BAH Technology E
 **Overview**
 This repository contains the implementation of a Convolutional Neural Network (CNN) architecture for image classification. This README provides the results of running a baseline model, an improved model and a best model post adjustment using the parameters from a Hyper Parameterization exercise.
 
-Architecture
-[Describe the architecture of your CNN here. Include details such as the number of layers, types of layers (convolutional, pooling, fully connected), activation functions, any regularization techniques used (e.g., dropout), etc. Provide a high-level overview followed by more detailed descriptions of each layer.]
+**Architecture**
+A Sequential model with regular densely-connected Neural Network (NN) layers was built. The input layer was assigned as layers.Input(shape=(28,28,1)). 
+The following are the list of Hidden Layers that were used:
 
-Dataset
+    layers.Conv2D(128, kernel_size=(3, 3), activation="relu", name='CL1'),
+    layers.MaxPooling2D(pool_size=(2, 2), name='MPL1'),
+
+    layers.Conv2D(64, kernel_size=(3, 3), activation="relu", name='CL2'),
+    layers.MaxPooling2D(pool_size=(2, 2), name='MPL2'),
+
+    layers.Flatten(name='FL'),
+    layers.Dropout(0.2),
+
+  Finally, the model's output layer was given as: layers.Dense(num_classes, name="OUTL", activation='softmax') where num_classes was earlier determined as 10.
+  
+**Dataset**
 [If applicable, describe the dataset used for training and evaluation. Include details such as the size of the dataset, number of classes, preprocessing steps, etc.]
 
 Training
