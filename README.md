@@ -1,7 +1,8 @@
 # BAH_TechEx_Guided_Project_Phase2
 This is a deliverable for the Guided Project Phase 2 during the BAH Technology Excellence Program
-Overview
-This repository contains the implementation of a Convolutional Neural Network (CNN) architecture for [insert purpose/task here, e.g., image classification, object detection, etc.]. This README provides an overview of the architecture, how to use it, and any other relevant information.
+
+**Overview**
+This repository contains the implementation of a Convolutional Neural Network (CNN) architecture for image classification. This README provides the results of running a baseline model, an improved model and a best model post adjustment using the parameters from a Hyper Parameterization exercise.
 
 Architecture
 [Describe the architecture of your CNN here. Include details such as the number of layers, types of layers (convolutional, pooling, fully connected), activation functions, any regularization techniques used (e.g., dropout), etc. Provide a high-level overview followed by more detailed descriptions of each layer.]
