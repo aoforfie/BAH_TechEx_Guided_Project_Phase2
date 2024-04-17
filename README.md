@@ -11,6 +11,8 @@ This project focuses on the development and understanding of a Convolutional Neu
 - Conducting model training and evaluation
 - Executing results analysis and model optimization
 - Preparing the model for deployment
+
+
 **Overview**
 This repository contains the implementation of a Convolutional Neural Network (CNN) architecture for Image Classification. This README provides the results of running a baseline model, an improved model and a best model post adjustment using the parameters from a Hyper Parameterization exercise.
 
