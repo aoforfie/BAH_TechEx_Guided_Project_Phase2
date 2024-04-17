@@ -35,17 +35,22 @@ For the five epochs, here were the results:
 **Epoch 4/5 --> loss: 0.0778 - sparse_categorical_accuracy: 0.9763
 **Epoch 5/5 --> loss: 0.0690 - sparse_categorical_accuracy: 0.9791
 
-Using model.fit_generator, the second model was run as follows.
-[Describe the training process here. Include details such as the optimizer used, learning rate, batch size, number of epochs, any data augmentation techniques applied, etc.]
+Afterwards, the first model was evaluated using the model.evaluate function leveraging the X_test_scaled and y_test datasets. That in turn yielded a loss of: 0.05009949207305908 and an accuracy of 0.984099984169006. Continuing on, predictions were made using the model.predict() function while viewing the shape as well. After this the labels of the predicted variable (y_pred_labels) were aligned.
+
+Using model.fit_generator, the second model was run just like the first model and used the same parameters.
+
+
 
 **Evaluation**
-With the help of TensorBoard results yielding various graphs and charts and scalars, the models were evaluated.
+The augmented images did NOT seem to help the model. The model lost accuracy from 0.9825 to become 0.8395. Also the loss was smaller 0.0569 compared to the increased loss of 0.5162 when the images were augmented. This means more model tuning was necessary.
+With the help of TensorBoard results yielding various graphs and charts and scalars, the models were further evaluated.
 [Describe how to evaluate the performance of the CNN model. Include metrics used for evaluation (e.g., accuracy, precision, recall), any validation techniques applied (e.g., k-fold cross-validation), etc.]
 
 **Results**
+The augmented images did NOT seem to help the model. The model lost accuracy from 0.9825 to become 0.8395. Also the loss was smaller 0.0569 compared to the increased loss of 0.5162 when the images were augmented. This means more model tuning was necessary.
 [Present the results of the trained model. Include metrics such as accuracy, loss, and any other relevant metrics. If applicable, provide visualizations (e.g., confusion matrix, learning curve) to further analyze the performance of the model.]
 
-Usage
+**Usage**
 [Provide instructions on how to use the trained model for inference. Include code snippets or examples demonstrating how to load the model and perform predictions on new data.]
 
 Dependencies
