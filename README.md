@@ -37,13 +37,16 @@ For the five epochs, here were the results:
 
 Afterwards, the first model was evaluated using the model.evaluate function leveraging the X_test_scaled and y_test datasets. That in turn yielded a loss of: 0.05009949207305908 and an accuracy of 0.984099984169006. Continuing on, predictions were made using the model.predict() function while viewing the shape as well. After this the labels of the predicted variable (y_pred_labels) were aligned.
 
-Using model.fit_generator, the second model was run just like the first model and used the same parameters.
-
-
-
+Using model.fit_generator, the second model was run just like the first model and used the same parameters. The five Epochs yielded these results.
+Epoch 1/5 --> loss: 1.5474 - sparse_categorical_accuracy: 0.4643 
+Epoch 2/5 --> loss: 0.8297 - sparse_categorical_accuracy: 0.7334
+Epoch 3/5 --> loss: 0.6564 - sparse_categorical_accuracy: 0.7912
+Epoch 4/5 --> loss: 0.5595 - sparse_categorical_accuracy: 0.8240
+Epoch 5/5 --> loss: 0.5162 - sparse_categorical_accuracy: 0.8395
 **Evaluation**
-The augmented images did NOT seem to help the model. The model lost accuracy from 0.9825 to become 0.8395. Also the loss was smaller 0.0569 compared to the increased loss of 0.5162 when the images were augmented. This means more model tuning was necessary.
+The augmented images did NOT seem to help the model. The model lost accuracy from 0.9791 to become 0.8395. Also the loss was smaller 0.0569 compared to the increased loss of 0.5162 when the images were augmented. This means more model tuning was necessary.
 With the help of TensorBoard results yielding various graphs and charts and scalars, the models were further evaluated.
+
 [Describe how to evaluate the performance of the CNN model. Include metrics used for evaluation (e.g., accuracy, precision, recall), any validation techniques applied (e.g., k-fold cross-validation), etc.]
 
 **Results**
@@ -69,10 +72,12 @@ print (y_test[:31])
 [Provide instructions on how to use the trained model for inference. Include code snippets or examples demonstrating how to load the model and perform predictions on new data.]
 
 **Dependencies**
-[List any dependencies required to run the code (e.g., Python libraries, frameworks) and how to install them.]
+Developed/run in Google colab notebook
+Dependencies can be found and installed with requirements.txt
+
 
 **References**
-Several web searches was conducted to supplement knowledge gained in training to accomplish this project.
+Several web searches were conducted and online articles reviewed to supplement knowledge gained in training to accomplish this project.
 
 **Contributors**
 Afia Owusu-Forfie and Martin Moreno
