@@ -51,13 +51,28 @@ The augmented images did NOT seem to help the model. The model lost accuracy fro
 [Present the results of the trained model. Include metrics such as accuracy, loss, and any other relevant metrics. If applicable, provide visualizations (e.g., confusion matrix, learning curve) to further analyze the performance of the model.]
 
 **Usage**
+In loading the data and splitting the data, these snippets of python code were used:
+(X_train, y_train), (X_test, y_test) = keras.datasets.mnist.load_data()
+
+In making predictions, these snippets of python code were used.
+y_pred_prob = model.predict(X_test_scaled)
+y_pred_prob.shape
+np.argmax(y_pred_prob[0]) == y_test[0] == 7
+y_pred_labels = np.zeros(len(y_pred_prob), dtype=int)
+for i in range(len(y_pred_prob)):
+  y_pred_labels[i] = np.argmax(y_pred_prob[i])
+
+print (y_pred_labels[:31])
+print ('-' * 60)
+print (y_test[:31])
+
 [Provide instructions on how to use the trained model for inference. Include code snippets or examples demonstrating how to load the model and perform predictions on new data.]
 
-Dependencies
+**Dependencies**
 [List any dependencies required to run the code (e.g., Python libraries, frameworks) and how to install them.]
 
-References
-[Include any references to papers, articles, or other resources that inspired or were used in the development of the CNN architecture.]
+**References**
+Several web searches was conducted to supplement knowledge gained in training to accomplish this project.
 
 **Contributors**
 Afia Owusu-Forfie and Martin Moreno
