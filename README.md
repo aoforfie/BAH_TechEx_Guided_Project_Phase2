@@ -45,7 +45,10 @@ References
 [Include any references to papers, articles, or other resources that inspired or were used in the development of the CNN architecture.]
 
 Contributors
-[List the contributors to this project, along with their respective roles.]
+Afia Owusu-Forfie and Martin Moreno
+
+Advisor
+Arvind Krishnan
 
 License
 [Specify the license under which the code is distributed.]
