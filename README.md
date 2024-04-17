@@ -26,7 +26,9 @@ The MNIST (Modified National Institute of Standards and Technology database) dat
 The MNIST dataset was split into four datasets of Training (X_train,y_train), Validation and Testing (X_test and y_test) after which they were normalized (dividing by 255), reshaped and augmented with ImageDataGenerator. The Pre-Processed data was saved as CNN_DATA.npz file.
 
 **Training**
-Three (3) different models were built, compiled and trained. These are the model's names:(1) build_model() (2) build_model (same as the first) and (3) best_model(). The first model used the normalized data within X_train_scaled2. The second model used the normalized AND augmented data within the train_generator and validation_generator. The final model used the recommended parameter choices from the hyperopt HyperParameter functions to run a final adjusted model. The epochs used for the first two models were 5 each but 10 for the last model. The model.fit was used for the first model with a batch_size set to 128 and verbose =1. When compiling this model, the Optimize used was SGD with a learning ratee of 1e-2, momentum =0.9 and nesterov=True.
+Three (3) different models were built, compiled and trained. These are the model's names:(1) build_model() (2) build_model (same as the first) and (3) best_model(). The first model used the normalized data within X_train_scaled2. The second model used the normalized AND augmented data within the train_generator and validation_generator. The final model used the recommended parameter choices from the hyperopt HyperParameter functions to run a final adjusted model. The epochs used for the first two models were 5 each but 10 for the last model. The model.fit was used for the first model with a batch_size set to 128 and verbose =1. When compiling this model, the Optimize used was Stochastic Gradient Descent(SGD) with a learning ratee of 1e-2, momentum =0.9 and nesterov=True.
+
+Using model.fit_generator, the second model was run as follows>
 [Describe the training process here. Include details such as the optimizer used, learning rate, batch size, number of epochs, any data augmentation techniques applied, etc.]
 
 **Evaluation**
