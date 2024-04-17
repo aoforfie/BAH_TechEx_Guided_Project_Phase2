@@ -59,11 +59,10 @@ Epoch 5/5 --> loss: 0.5162 - sparse_categorical_accuracy: 0.8395
 The augmented images did NOT seem to help the model. The model lost accuracy from 0.9791 to become 0.8395. Also the loss was smaller 0.0569 compared to the increased loss of 0.5162 when the images were augmented. This means more model tuning was necessary.
 With the help of TensorBoard results yielding various graphs and charts and scalars, the models were further evaluated.
 
-[Describe how to evaluate the performance of the CNN model. Include metrics used for evaluation (e.g., accuracy, precision, recall), any validation techniques applied (e.g., k-fold cross-validation), etc.]
+
 
 **Results**
 The augmented images did NOT seem to help the model. The model lost accuracy from 0.9825 to become 0.8395. Also the loss was smaller 0.0569 compared to the increased loss of 0.5162 when the images were augmented. This means more model tuning was necessary.
-[Present the results of the trained model. Include metrics such as accuracy, loss, and any other relevant metrics. If applicable, provide visualizations (e.g., confusion matrix, learning curve) to further analyze the performance of the model.]
 
 **Usage**
 In loading the data and splitting the data, these snippets of python code were used:
@@ -81,7 +80,6 @@ print (y_pred_labels[:31])
 print ('-' * 60)
 print (y_test[:31])
 
-[Provide instructions on how to use the trained model for inference. Include code snippets or examples demonstrating how to load the model and perform predictions on new data.]
 
 **Dependencies**
 Developed/run in Google colab notebook
@@ -100,7 +98,5 @@ Arvind Krishnan
 **Instructor**
 Armando Galeana
 
-License
-[Specify the license under which the code is distributed.]
 
 
