@@ -26,13 +26,14 @@ The MNIST (Modified National Institute of Standards and Technology database) dat
 The MNIST dataset was split into four datasets of Training (X_train,y_train), Validation and Testing (X_test and y_test) after which they were normalized (dividing by 255), reshaped and augmented with ImageDataGenerator. The Pre-Processed data was saved as CNN_DATA.npz file.
 
 **Training**
-Three (3) different models were built, compiled and trained. These are the model's names:(1) build_model() (2) build_model (same as the first) and (3) best_model(). The first model used the normalized data within X_train_scaled2. The second model used the normalized AND augmented data within the train_generator and validation_generator. The final model used the recommended parameter choices from the hyperopt HyperParameter functions to run a final adjusted model. 
+Three (3) different models were built, compiled and trained. These are the model's names:(1) build_model() (2) build_model (same as the first) and (3) best_model(). The first model used the normalized data within X_train_scaled2. The second model used the normalized AND augmented data within the train_generator and validation_generator. The final model used the recommended parameter choices from the hyperopt HyperParameter functions to run a final adjusted model. The epochs used for the first two models were 5 each but 10 for the last model. The model.fit was used for the first model with a batch_size set to 128 and verbose =1. When compiling this model, the Optimize used was SGD with a learning ratee of 1e-2, momentum =0.9 and nesterov=True.
 [Describe the training process here. Include details such as the optimizer used, learning rate, batch size, number of epochs, any data augmentation techniques applied, etc.]
 
-Evaluation
+**Evaluation**
+With the help of TensorBoard results yielding various graphs and charts and scalars, the models were evaluated.
 [Describe how to evaluate the performance of the CNN model. Include metrics used for evaluation (e.g., accuracy, precision, recall), any validation techniques applied (e.g., k-fold cross-validation), etc.]
 
-Results
+**Results**
 [Present the results of the trained model. Include metrics such as accuracy, loss, and any other relevant metrics. If applicable, provide visualizations (e.g., confusion matrix, learning curve) to further analyze the performance of the model.]
 
 Usage
@@ -44,11 +45,14 @@ Dependencies
 References
 [Include any references to papers, articles, or other resources that inspired or were used in the development of the CNN architecture.]
 
-Contributors
+**Contributors**
 Afia Owusu-Forfie and Martin Moreno
 
-Advisor
+**Advisor**
 Arvind Krishnan
+
+**Instructor***
+Armando Galeana
 
 License
 [Specify the license under which the code is distributed.]
